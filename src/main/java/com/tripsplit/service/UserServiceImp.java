@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UserServiceImp implements UserService, UserDetailsService {
+public class UserServiceImp implements UserService {
 
     @Autowired
     private UserRepository userRepository;
@@ -76,18 +76,4 @@ public class UserServiceImp implements UserService, UserDetailsService {
         return null;
     }
 
-    @Override
-    public UserDetails loadUserByUserId(Long userId) {
-        return userRepository.findById(userId).get();
-    }
-
-    @Override
-    public User loadUserByUserName(String userName) {
-        return userRepository.findByUserName(userName);
-    }
-
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return null;
-    }
 }

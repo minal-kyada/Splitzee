@@ -26,7 +26,4 @@ public interface UserService {
 
     User userLogin(UserLogin userLogin);
 
-    UserDetails loadUserByUserId(Long userId);
-
-    User loadUserByUserName(String userName);
 }

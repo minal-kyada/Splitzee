@@ -4,18 +4,11 @@ import com.aarhankhan.splitwise.entity.Expense;
 import com.aarhankhan.splitwise.entity.Group;
 import com.aarhankhan.splitwise.entity.User;
 import com.aarhankhan.splitwise.event.RegistrationCompleteEvent;
-import com.aarhankhan.splitwise.model.JWTModel;
 import com.aarhankhan.splitwise.model.UserLogin;
 import com.aarhankhan.splitwise.model.UserModel;
 import com.aarhankhan.splitwise.service.UserService;
-import com.aarhankhan.splitwise.utility.JWTUtility;
-import org.apache.catalina.Authenticator;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,15 +20,12 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-    @Autowired
-    private JWTUtility jwtUtility;
-
 
     @Autowired
     private ApplicationEventPublisher publisher;
 
     @PostMapping("/register")
-    public JWTModel registerUser(@RequestBody UserModel userModel){
+    public User registerUser(@RequestBody UserModel userModel){
 
         User user =userService.createUser(userModel);
 
@@ -43,25 +33,13 @@ public class UserController {
                 user,
                 "url"
         ));
-
-        final String token = jwtUtility.generateToken(user);
-
-        return new JWTModel(token);
+        return user;
     }
     
     @PostMapping("/login")
-    public JWTModel userLogin(@RequestBody UserLogin userLogin) throws Exception{
+    public User userLogin(@RequestBody UserLogin userLogin) throws Exception{
 
-        User user = userService.userLogin(userLogin);
-        if(user == null){
-            throw new Exception("INVALID_CREDENTIALS");
-        }
-
-
-
-        final String token = jwtUtility.generateToken(user);
-
-        return new JWTModel(token);
+        return userService.userLogin(userLogin);
     }
     @GetMapping("/{id}")
     public User getUserById(@PathVariable("id") Long userId){

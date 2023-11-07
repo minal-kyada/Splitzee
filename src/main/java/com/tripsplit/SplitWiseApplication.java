@@ -21,8 +21,4 @@ public class SplitWiseApplication {
     public static void main(String[] args) {
         SpringApplication.run(SplitWiseApplication.class, args);
     }
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder(11);
     }
-}
