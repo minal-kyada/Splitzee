@@ -1,8 +1,7 @@
-package com.aarhankhan.splitwise.controller;
+package com.tripsplit.controller;
 
-import com.aarhankhan.splitwise.entity.FinalSplit;
-import com.aarhankhan.splitwise.model.FinalSplitModel;
-import com.aarhankhan.splitwise.service.FinalSplitService;
+import com.tripsplit.model.FinalSplitModel;
+import com.tripsplit.service.FinalSplitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

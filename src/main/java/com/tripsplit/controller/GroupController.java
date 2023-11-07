@@ -1,11 +1,11 @@
-package com.aarhankhan.splitwise.controller;
+package com.tripsplit.controller;
 
-import com.aarhankhan.splitwise.entity.Expense;
-import com.aarhankhan.splitwise.entity.FinalSplit;
-import com.aarhankhan.splitwise.entity.Group;
-import com.aarhankhan.splitwise.entity.User;
-import com.aarhankhan.splitwise.model.GroupModel;
-import com.aarhankhan.splitwise.service.GroupService;
+import com.tripsplit.entity.Expense;
+import com.tripsplit.entity.FinalSplit;
+import com.tripsplit.entity.Group;
+import com.tripsplit.entity.User;
+import com.tripsplit.model.GroupModel;
+import com.tripsplit.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,4 +1,4 @@
-package com.aarhankhan.splitwise.repository;
+package com.tripsplit.repository;
 
 import org.springframework.stereotype.Repository;
 

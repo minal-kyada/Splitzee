@@ -1,4 +1,4 @@
-package com.aarhankhan.splitwise;
+package com.tripsplit;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

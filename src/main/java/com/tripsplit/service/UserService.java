@@ -1,14 +1,12 @@
-package com.aarhankhan.splitwise.service;
+package com.tripsplit.service;
 
-import com.aarhankhan.splitwise.entity.Expense;
-import com.aarhankhan.splitwise.entity.Group;
-import com.aarhankhan.splitwise.entity.User;
-import com.aarhankhan.splitwise.model.UserLogin;
-import com.aarhankhan.splitwise.model.UserModel;
-import org.springframework.security.core.userdetails.UserDetails;
+import com.tripsplit.entity.Expense;
+import com.tripsplit.entity.Group;
+import com.tripsplit.entity.User;
+import com.tripsplit.model.UserLogin;
+import com.tripsplit.model.UserModel;
 
 import java.util.List;
-import java.util.Optional;
 
 
 public interface UserService {

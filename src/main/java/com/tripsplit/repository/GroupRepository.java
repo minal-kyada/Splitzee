@@ -1,7 +1,6 @@
-package com.aarhankhan.splitwise.repository;
+package com.tripsplit.repository;
 
-import com.aarhankhan.splitwise.entity.Group;
-import com.aarhankhan.splitwise.entity.User;
+import com.tripsplit.entity.Group;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

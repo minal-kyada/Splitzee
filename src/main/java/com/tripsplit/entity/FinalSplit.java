@@ -1,11 +1,8 @@
-package com.aarhankhan.splitwise.entity;
+package com.tripsplit.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Data

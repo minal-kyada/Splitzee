@@ -1,20 +1,16 @@
-package com.aarhankhan.splitwise.service;
+package com.tripsplit.service;
 
-import com.aarhankhan.splitwise.entity.Expense;
-import com.aarhankhan.splitwise.entity.Group;
-import com.aarhankhan.splitwise.entity.User;
-import com.aarhankhan.splitwise.model.UserLogin;
-import com.aarhankhan.splitwise.model.UserModel;
-import com.aarhankhan.splitwise.repository.UserRepository;
+import com.tripsplit.entity.Expense;
+import com.tripsplit.entity.Group;
+import com.tripsplit.entity.User;
+import com.tripsplit.model.UserLogin;
+import com.tripsplit.model.UserModel;
+import com.tripsplit.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserServiceImp implements UserService {

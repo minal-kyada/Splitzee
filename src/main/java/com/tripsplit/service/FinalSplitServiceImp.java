@@ -1,9 +1,9 @@
-package com.aarhankhan.splitwise.service;
+package com.tripsplit.service;
 
-import com.aarhankhan.splitwise.entity.Expense;
-import com.aarhankhan.splitwise.entity.Group;
-import com.aarhankhan.splitwise.entity.User;
-import com.aarhankhan.splitwise.model.FinalSplitModel;
+import com.tripsplit.entity.Expense;
+import com.tripsplit.entity.Group;
+import com.tripsplit.entity.User;
+import com.tripsplit.model.FinalSplitModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

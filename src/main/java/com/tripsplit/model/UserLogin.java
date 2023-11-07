@@ -1,4 +1,4 @@
-package com.aarhankhan.splitwise.model;
+package com.tripsplit.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

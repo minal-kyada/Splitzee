@@ -1,7 +1,6 @@
-package com.aarhankhan.splitwise.service;
+package com.tripsplit.service;
 
-import com.aarhankhan.splitwise.entity.FinalSplit;
-import com.aarhankhan.splitwise.model.FinalSplitModel;
+import com.tripsplit.model.FinalSplitModel;
 
 import java.util.List;
 

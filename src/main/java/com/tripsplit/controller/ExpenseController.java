@@ -1,8 +1,8 @@
-package com.aarhankhan.splitwise.controller;
+package com.tripsplit.controller;
 
-import com.aarhankhan.splitwise.entity.Expense;
-import com.aarhankhan.splitwise.model.ExpenseModel;
-import com.aarhankhan.splitwise.service.ExpenseService;
+import com.tripsplit.entity.Expense;
+import com.tripsplit.model.ExpenseModel;
+import com.tripsplit.service.ExpenseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

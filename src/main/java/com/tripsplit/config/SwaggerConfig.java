@@ -1,4 +1,4 @@
-package com.aarhankhan.splitwise.config;
+package com.tripsplit.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +18,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .paths(PathSelectors.any())
-                .apis(RequestHandlerSelectors.basePackage("com.aarhankhan"))
+                .apis(RequestHandlerSelectors.basePackage("com.tripsplit"))
                 .build()
                 .apiInfo(apiInfo());
 
@@ -26,14 +26,14 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfo(
-                "SplitWise",
+                "TripSplit",
                 "Splits bill between friends ;)",
                 "v1.0.0",
                 "Public API",
                 new Contact(
-                        "Aarhan Khan",
-                        "www.github.com/aarhank",
-                        "aarhankhan212@gmail.com"),
+                        "Bhavikk Shah",
+                        "www.github.com/bhavikk",
+                        "bshah49@hawk.iit.edu"),
                 "MIT",
                 "",
                 Collections.emptyList());

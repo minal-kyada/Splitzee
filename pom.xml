@@ -8,11 +8,11 @@
         <version>2.7.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.aarhankhan</groupId>
-    <artifactId>SplitWise</artifactId>
+    <groupId>com.tripsplit</groupId>
+    <artifactId>TripSplit</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>SplitWise</name>
-    <description>SplitWise</description>
+    <name>TripSplit</name>
+    <description>TripSplit</description>
     <properties>
         <java.version>17</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>

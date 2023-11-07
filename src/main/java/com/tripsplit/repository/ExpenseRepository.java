@@ -1,6 +1,6 @@
-package com.aarhankhan.splitwise.repository;
+package com.tripsplit.repository;
 
-import com.aarhankhan.splitwise.entity.Expense;
+import com.tripsplit.entity.Expense;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

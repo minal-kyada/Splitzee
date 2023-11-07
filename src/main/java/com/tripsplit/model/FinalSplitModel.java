@@ -1,6 +1,6 @@
-package com.aarhankhan.splitwise.model;
+package com.tripsplit.model;
 
-import com.aarhankhan.splitwise.entity.Group;
+import com.tripsplit.entity.Group;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

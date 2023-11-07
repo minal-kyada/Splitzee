@@ -1,4 +1,4 @@
-package com.aarhankhan.splitwise.config;
+package com.tripsplit.config;
 
 
 import org.springframework.context.annotation.Bean;

@@ -1,8 +1,8 @@
-package com.aarhankhan.splitwise.service;
+package com.tripsplit.service;
 
-import com.aarhankhan.splitwise.entity.Expense;
-import com.aarhankhan.splitwise.model.ExpenseModel;
-import com.aarhankhan.splitwise.repository.ExpenseRepository;
+import com.tripsplit.entity.Expense;
+import com.tripsplit.model.ExpenseModel;
+import com.tripsplit.repository.ExpenseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

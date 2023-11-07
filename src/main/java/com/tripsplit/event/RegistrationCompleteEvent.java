@@ -1,6 +1,6 @@
-package com.aarhankhan.splitwise.event;
+package com.tripsplit.event;
 
-import com.aarhankhan.splitwise.entity.User;
+import com.tripsplit.entity.User;
 import org.springframework.context.ApplicationEvent;
 
 public class RegistrationCompleteEvent extends ApplicationEvent {
