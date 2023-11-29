@@ -4,9 +4,11 @@ import com.tripsplit.entity.Expense;
 import com.tripsplit.entity.Group;
 import com.tripsplit.entity.User;
 import com.tripsplit.event.RegistrationCompleteEvent;
+import com.tripsplit.exception.UserException;
 import com.tripsplit.model.UserLogin;
 import com.tripsplit.model.UserModel;
 import com.tripsplit.service.UserService;
+import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.web.bind.annotation.*;
@@ -24,13 +26,19 @@ public class UserController {
     private UserService userService;
     @Autowired
     private ApplicationEventPublisher publisher;
+    @Autowired
+    private MeterRegistry meterRegistry;
 
     @PostMapping("/register")
     @Timed(value = "userRegister.time", description = "Time taken to register")
     public User registerUser(@RequestBody UserModel userModel){
 
-        User user =userService.createUser(userModel);
-
+        User user = null;
+        try {
+            user = userService.createUser(userModel);
+        } catch (UserException e) {
+            meterRegistry.counter("RegisterUserErrorCounter", e.getMessage());
+        }
         publisher.publishEvent(new RegistrationCompleteEvent(
                 user,
                 "url"
@@ -40,8 +48,13 @@ public class UserController {
     
     @PostMapping("/login")
     @Timed(value = "userLogin.time", description = "Time taken to login")
-    public User userLogin(@RequestBody UserLogin userLogin) throws Exception{
-        return userService.userLogin(userLogin);
+    public User userLogin(@RequestBody UserLogin userLogin){
+        try {
+            return userService.userLogin(userLogin);
+        } catch (UserException e) {
+            meterRegistry.counter("LoginUserErrorCount", e.getMessage());
+        }
+        return null;
     }
     @GetMapping("/{id}")
     @Timed(value = "fetchUserById.time", description = "Time taken to get user by id")

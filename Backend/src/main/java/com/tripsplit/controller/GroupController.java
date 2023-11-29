@@ -4,8 +4,10 @@ import com.tripsplit.entity.Expense;
 import com.tripsplit.entity.FinalSplit;
 import com.tripsplit.entity.Group;
 import com.tripsplit.entity.User;
+import com.tripsplit.exception.GroupUserException;
 import com.tripsplit.model.GroupModel;
 import com.tripsplit.service.GroupService;
+import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,10 +21,18 @@ public class GroupController {
     @Autowired
     private GroupService groupService;
 
+    @Autowired
+    private MeterRegistry meterRegistry;
+
     @PostMapping("/create")
     public Group createGroup(@RequestBody GroupModel groupModel){
 
-        return groupService.createGroup(groupModel);
+        try {
+            return groupService.createGroup(groupModel);
+        } catch (GroupUserException e) {
+            meterRegistry.counter("CreateGroupErrorCounter", e.getMessage());
+        }
+        return null;
     }
 
     @PostMapping("/adduser/{id}")

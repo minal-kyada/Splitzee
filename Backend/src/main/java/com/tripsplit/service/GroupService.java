@@ -5,12 +5,13 @@ import com.tripsplit.entity.Expense;
 import com.tripsplit.entity.FinalSplit;
 import com.tripsplit.entity.Group;
 import com.tripsplit.entity.User;
+import com.tripsplit.exception.GroupUserException;
 import com.tripsplit.model.GroupModel;
 
 import java.util.List;
 
 public interface GroupService {
-    Group createGroup(GroupModel groupModel);
+    Group createGroup(GroupModel groupModel) throws GroupUserException;
 
     Group getGroupById(Long groupId);
 

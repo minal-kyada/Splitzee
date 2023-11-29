@@ -14,8 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan("com.tripsplit.event")
 public class SplitWiseApplication
 {
-
     public static void main(String[] args) {
         SpringApplication.run(SplitWiseApplication.class, args);
     }
-    }
+}

@@ -4,6 +4,7 @@ import com.tripsplit.entity.Expense;
 import com.tripsplit.entity.FinalSplit;
 import com.tripsplit.entity.Group;
 import com.tripsplit.entity.User;
+import com.tripsplit.exception.GroupUserException;
 import com.tripsplit.model.GroupModel;
 import com.tripsplit.repository.GroupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 public class GroupServiceImp implements GroupService {
@@ -18,10 +21,25 @@ public class GroupServiceImp implements GroupService {
     @Autowired
     private GroupRepository groupRepository;
     @Override
-    public Group createGroup(GroupModel groupModel) {
+    public Group createGroup(GroupModel groupModel) throws GroupUserException {
         Group group = new Group();
-        group.setGroupName(groupModel.getGrpName());
-        group.setGroupType(groupModel.getGrpType());
+        String grpName = groupModel.getGrpName();
+
+        String stringRegex = "(?i)(^[a-z])((?![ .,'-]$)[a-z .,'-]){0,24}$";
+
+        Matcher grpNameMatch = Pattern.compile(stringRegex).matcher(grpName);
+        if (grpName.isEmpty() || grpName.isBlank() || !grpNameMatch.matches()) {
+            throw new GroupUserException("Invalid Group Name");
+        }
+        group.setGroupName(grpName);
+
+        String grpType = groupModel.getGrpType();
+        Matcher grpTypeMatch = Pattern.compile(stringRegex).matcher(grpType);
+        if (grpType.isEmpty() || grpType.isBlank() || !grpTypeMatch.matches()) {
+            throw new GroupUserException("Invalid Group Type");
+        }
+        group.setGroupType(grpType);
+
         group.setGroupBudget(groupModel.getGrpBudget());
         group.setGroupUsers(groupModel.getGrpUser());
         group.setExpenses(null);

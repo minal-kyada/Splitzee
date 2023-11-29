@@ -1,8 +1,10 @@
 package com.tripsplit.controller;
 
 import com.tripsplit.entity.Expense;
+import com.tripsplit.exception.ExpenseException;
 import com.tripsplit.model.ExpenseModel;
 import com.tripsplit.service.ExpenseService;
+import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,11 +17,18 @@ public class ExpenseController {
 
     @Autowired
     private ExpenseService expenseService;
+    @Autowired
+    private MeterRegistry meterRegistry;
 
     @PostMapping("/create")
     public Expense createExpense(@RequestBody ExpenseModel expenseModel){
 
-        return expenseService.createExpense(expenseModel);
+        try {
+            return expenseService.createExpense(expenseModel);
+        } catch (ExpenseException e) {
+            meterRegistry.counter("CreateExpenseErrorCounter", e.getMessage());
+        }
+        return null;
     }
     @GetMapping("/group/{id}")
     public List<Expense> getGrpExpenses(@PathVariable("id") Long groupId){

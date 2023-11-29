@@ -3,6 +3,7 @@ package com.tripsplit.service;
 import com.tripsplit.entity.Expense;
 import com.tripsplit.entity.Group;
 import com.tripsplit.entity.User;
+import com.tripsplit.exception.UserException;
 import com.tripsplit.model.UserLogin;
 import com.tripsplit.model.UserModel;
 
@@ -10,7 +11,7 @@ import java.util.List;
 
 
 public interface UserService {
-    User createUser(UserModel userModel);
+    User createUser(UserModel userModel) throws UserException;
 
     User getUserById(Long userId);
 
@@ -22,6 +23,6 @@ public interface UserService {
 
     String deleteUser(Long userId);
 
-    User userLogin(UserLogin userLogin);
+    User userLogin(UserLogin userLogin) throws UserException;
 
 }
