@@ -147,7 +147,7 @@ export default function MainDashboard() {
         </Select>
         </FormControl>
           </div>
-          <div style={{textAlign:'center',backgroundColor:'#674fa3',borderRadius:'0.5vw',padding:'2px',marginTop:'10px',cursor:'pointer'}}  onClick={()=>{creategroup()}}>
+          <div style={{textAlign:'center',backgroundColor:'#2874A6',borderRadius:'0.5vw',padding:'2px',marginTop:'10px',cursor:'pointer'}}  onClick={()=>{creategroup()}}>
             <p style={{color:'white'}}>Create Group</p>
             </div>
         </Box>

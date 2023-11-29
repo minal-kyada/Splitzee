@@ -13,7 +13,7 @@
     padding-left: 1vw;
     padding-right: 1vw;
     padding-bottom: 1vw;
-    background-color: #eee8f4;
+    background-color: #DCECF6;
     border-radius: 1vw;
     width: 25vw;
     max-width: 23%;
@@ -76,7 +76,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f9d8e3;
+    background-color: #DCECF6;
    
     width: 30%;
     border-radius: 1vw;
@@ -103,7 +103,7 @@
 }
 
 .filledbox{
-    background-color: #f9d8e3 ;
+    background-color: #DCECF6 ;
     
     border-radius: 10px;
     margin: 0;
@@ -112,7 +112,7 @@
 .outlinebox{
     border: solid;
     border-width: 1px;
-    border-color: #eee9ed;
+    border-color: #DCECF6;
    
     border-radius: 10px;
     padding: 5px;
@@ -155,7 +155,7 @@
         padding-left: 10px;
         padding-right: 10px;
         padding-bottom: 10px;
-        background-color: #eee8f4;
+        background-color: #DCECF6;
         border-radius: 1vw;
         width: 500px;
         max-width: 80%;

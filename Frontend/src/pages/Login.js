@@ -90,9 +90,9 @@ export default function Login() {
             {/* <Iframe url="https://giphy.com/embed/xT1R9TaUQfgf5qQZEY" width="50%" height="50%" position='absolute' className="giphy-embed" ></Iframe> */}
             <img src={split} alt="loading..." style={{height:'100%',width:'55%',position:'absolute'}} />
             </div>
-            <div className='login-s' style={{backgroundColor:'#FFFAFA'}}>
+            <div className='login-s' style={{backgroundColor:'#F9F9F9'}}>
             <p className='login-head'>Trip<span style={{color:'#2874A6'}}>Split</span></p>
-            <div className='login-box' style={{backgroundColor:'#FFFAFA'}}>
+            <div className='login-box' style={{backgroundColor:'#F9F9F9'}}>
             <TextField label="Email" onChange={(e)=>{setEmail(e.target.value)}}/>
           
             <TextField 

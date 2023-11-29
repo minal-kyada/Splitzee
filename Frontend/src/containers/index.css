@@ -27,7 +27,7 @@
     align-items: center;
     gap:1vw;
     text-align: center;
-    background-color: #f7f2f9;
+    background-color: #CAE2F2;
     border-radius: 1vw;
     padding-left: 1vw;
     min-width: 17vw;
@@ -42,7 +42,7 @@
 }
 
 .top-object{
-    background-color: #eae4f2;
+    background-color: #EDF5FB;
     border-radius: 0.5vw;
     padding-left: 1vw;
     padding-right: 1vw;
@@ -55,7 +55,7 @@
 }
 .maindashboard-main{
     
-    background-color: #f7f2f9;
+    background-color: #CAE2F2;
     min-height: 100vh;
     max-width: 82%;
   
@@ -94,7 +94,7 @@
 
 @media (max-width:900px) {
     .maindashboard-main{
-        background-color: #f7f2f9;
+        background-color: #CAE2F2;
         height: 100vh;
         width: 100vw;
         max-width: 100%;
@@ -123,7 +123,7 @@
         padding-left: 10px;
         width:500px;
         max-width: 100%;
-        background-color: #f7f2f9;
+        background-color: #CAE2F2;
         
     }
     .top-container{
