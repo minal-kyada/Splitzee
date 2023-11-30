@@ -37,7 +37,8 @@ public class UserController {
         try {
             user = userService.createUser(userModel);
         } catch (UserException e) {
-            meterRegistry.counter("RegisterUserErrorCounter", e.getMessage());
+            meterRegistry.counter("RegisterUserErrorCounter", "error_message",e.getMessage()).increment();
+            throw new RuntimeException(e);
         }
         publisher.publishEvent(new RegistrationCompleteEvent(
                 user,

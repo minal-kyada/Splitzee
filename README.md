@@ -1,126 +1,91 @@
-## TripSplit-Backend
+# TripSplit
 
-<img alt="Spring" src="https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white"/> <img alt="Java" src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white"/>
+## Table of Contents
 
-A bill spliting application, uses a greedy algorithm to give the min number of transactions to resolve the expenses, also reduces the complexity.
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+- [Build and Deployment](#build-and-deployment)
+- [Lines of Code](#Total-Lines-of-Code)
+- [Features](#features-Delivered)
+- [Functionalities](#Functionalities-implemented)
 
-Made Using Spring Boot with fully scalable code, JWT authentication used to verify the user, database used AWS RDS.
+## Prerequisites
 
-Frontend : https://tripsplits.netlify.app/register
+Before you begin, ensure you have met the following requirements:
 
-![](lld.png)
+- Node.js installed on your machine.
+- npm (Node Package Manager) or yarn installed.
+- Any IDE (Intellij Recommended)
 
-### Required request body
-- ### UserLogin
-```
-{
-    "username":	string,
-    "password": string,
-}
-```
-- ### User Register
-```
-{
-    "userFirstName":	string,
-    "userLastName":	string,
-    "userName": string,
-    "userPassword":	string,
-    "userMatchingPassword": string
-}
-```
-- ### Group
-```
-{
-    "grpName":	string,
-    "grpType":	string,
-    "grpBudget": Long,
-    "grpUser":	List<User>,
-}
-```
-- ### Expense
-```
-{
-    "expName":	string,
-    "expAmt":	Long,
-    "expPaidBy": Long,
-    "usrSplitBtw":	List<User>,
-    "expGrp": Group
-}
-```
+## Getting Started
 
-## Examples
+To get a local copy up and running, follow these simple steps.
 
-- ### User
-**Endpoint:**      
-```user/register```  
-**Request Boddy:**       
- ```
-{
-    "userFirstName":"aarhan",
-    "userLastName":"khan",
-    "userName":"bdab",
-    "userPassword":"hello123",
-    "userMatchingPassword":"hello123"
-}
- ```       
-**Response:**       
-  ```
-{
-    "jwtToken": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZGFiIiwiZXhwIjoxNjYzNzgwNTM1LCJpYXQiOjE2NjM3NjI1MzV9.jyxoG1RFcT9jNrDSnbYuKo7I0zUob8M- pJphmiUl7i61aTny_EZ0LtfZBQhqA-WgsblY240QHC92LWxCzf3nrA"
-}
-  ```
-  
-- ### Expense
-**Endpoint:**      
-```expense/create```      
-**Request Body:**     
- ```
- {
-    "expName":"Bus",
-    "expAmt":60,
-    "expPaidBy":1,
-    "usrSplitBtw":[{"id":2}],
-    "expGrp":
-    {
-        "id": 1,
-        "groupName": "Shimla",
-        "groupBudget": 10000,
-        "groupType": "trip"
-    }
-}
- ```           
-**Response:**
-  ```
-  {
-    "id": 2,
-    "expName": "Bus",
-    "expAmt": 60,
-    "expPaidBy": 1,
-    "expGrp": {
-        "id": 1,
-        "groupName": "Shimla",
-        "groupBudget": 10000,
-        "groupType": "trip"
-    }
-}
-  ```
+### Installation
+#### Frontend Installation
 
-- ### FinalSplit
-**Endpoint:**      
-```FinalSplit/{groupId}```  
-**Reponse:**       
-```
-[
-    {
-        "finalPayTo": 1,
-        "finalPayBy": 2,
-        "finalAmt": 60.0,
-        "finalSplitGrp": {
-            "id": 1,
-            "groupName": "Shimla",
-            "groupBudget": 10000,
-            "groupType": "trip"
-        }
-    }
-]
-```
+1. Navigate to the project directory: 
+
+    ```cd Tripsplit/Frontend```
+2. Install Dependencies
+
+    ``` npm install ```
+
+#### Backend Installation
+
+1. Navigate to the project directory: 
+
+    ```cd Tripsplit/Backend```
+2. Install Dependencies
+
+    ``` mvn install ```
+
+### Build and Deployment
+
+#### Frontend
+
+In the project directory, you can run the following scripts to build and deploy the app:
+
+- Start development server:
+
+    ```npm start```
+
+  Open http://localhost:3000 to view it in the browser.
+- Build for production:
+
+    ```npm run build```
+
+    Builds the app for production to the build folder.
+
+#### Backend
+
+Open the project in Intellij or any other ide
+
+- Configure java 17 as application SDK
+- Build the project and run ``com.tripsplit.TripSplitApplication``
+
+## Total Lines of Code
+
+### Backend : 857 LOC
+![Alt text](image.png)
+
+### Frontend : 942 LOC
+![Alt text](image-1.png)
+
+## Features Delivered
+
+1.	Adding and splitting expenses evenly or based on custom ratios
+2.	Creating groups amongst different users
+3.	Tracking balances owed on the dashboard
+4.	Settling up expenses when users reimburse each other
+5.  Monitoring application performance using prometheus and grafana
+
+## Functionalities Implemented
+
+1.	Users can register/login with email and password
+2.	Users can add expenses by entering details like amount, category, date, etc.
+3.	Users can add contacts/groups to share expenses with
+4.	Users can split an expense evenly or unevenly with contacts
+5.	Users can view dashboard showing who owes who and settle balances
+

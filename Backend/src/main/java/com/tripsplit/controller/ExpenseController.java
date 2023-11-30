@@ -26,9 +26,9 @@ public class ExpenseController {
         try {
             return expenseService.createExpense(expenseModel);
         } catch (ExpenseException e) {
-            meterRegistry.counter("CreateExpenseErrorCounter", e.getMessage());
+            meterRegistry.counter("CreateExpenseErrorCounter","error_message", e.getMessage()).increment();
+            throw new RuntimeException(e);
         }
-        return null;
     }
     @GetMapping("/group/{id}")
     public List<Expense> getGrpExpenses(@PathVariable("id") Long groupId){

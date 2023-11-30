@@ -30,9 +30,9 @@ public class GroupController {
         try {
             return groupService.createGroup(groupModel);
         } catch (GroupUserException e) {
-            meterRegistry.counter("CreateGroupErrorCounter", e.getMessage());
+            meterRegistry.counter("CreateGroupErrorCounter","error_message", e.getMessage()).increment();
+            throw new RuntimeException(e);
         }
-        return null;
     }
 
     @PostMapping("/adduser/{id}")

@@ -41,7 +41,7 @@ public class UserServiceImp implements UserService {
         }
         user.setUserLastName(ln);
 
-        String userNameRegex = "^[A-Za-z]\\\\w{5, 29}$";
+        String userNameRegex = "^[A-Za-z]\\\\w{5,29}$";
         String un = userModel.getUserName();
         Matcher unMatch = Pattern.compile(userNameRegex).matcher(un);
         if (un.isEmpty() || un.isBlank() || !unMatch.matches()) {

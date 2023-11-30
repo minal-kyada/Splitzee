@@ -12,9 +12,9 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan("com.tripsplit.service")
 @ComponentScan("com.tripsplit.config")
 @ComponentScan("com.tripsplit.event")
-public class SplitWiseApplication
+public class TripSplitApplication
 {
     public static void main(String[] args) {
-        SpringApplication.run(SplitWiseApplication.class, args);
+        SpringApplication.run(TripSplitApplication.class, args);
     }
 }
