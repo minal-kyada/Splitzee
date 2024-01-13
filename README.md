@@ -68,10 +68,10 @@ Open the project in Intellij or any other ide
 ## Total Lines of Code
 
 ### Backend : 857 LOC
-![Alt text](./TripSplit/Frontend/image.png)
+![Alt text](./Splitzee/Frontend/image.png)
 
 ### Frontend : 942 LOC
-![Alt text](./TripSplit/Frontend/image-1.png)
+![Alt text](./Splitzee/Frontend/image-1.png)
 
 ## Features Delivered
 
