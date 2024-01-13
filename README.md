@@ -1,4 +1,4 @@
-# TripSplit
+# Splitzee
 
 ## Table of Contents
 
