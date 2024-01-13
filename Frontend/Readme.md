@@ -1,10 +1,10 @@
 # FRONTEND
 
 ### Home Page
-![Home Page](Frontend/tripsplit.gif)
+![Home Page](tripsplit.gif)
 
 ### Dashboard
-![Dashboard](Frontend/dashboard.png)
+![Dashboard](dashboard.png)
 
 ### LOC
-![LOC](Frontend/image-1.png)
+![LOC](image-1.png)
